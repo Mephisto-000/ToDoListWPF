@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using WpfToDoList.ViewModels; // 引用你的 ViewModel 命名空間
+using WpfToDoList.ViewModels; // 引用 ViewModel 命名空間
 
 namespace WpfToDoList.Views
 {
@@ -8,7 +8,10 @@ namespace WpfToDoList.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        private TaskViewModel vm; // ViewModel 欄位
+        // ViewModel 欄位
+        private readonly TaskViewModel vm;
+
+        #region 建構子與初始化
 
         /// <summary>
         /// 建構子：初始化畫面與資料繫結
@@ -20,6 +23,10 @@ namespace WpfToDoList.Views
             this.DataContext = vm; // 設定 DataContext 讓 XAML 可直接資料繫結
         }
 
+        #endregion
+
+        #region 按鈕事件處理
+
         /// <summary>
         /// Add 按鈕點擊事件：呼叫 ViewModel 的 AddTask()
         /// </summary>
@@ -28,9 +35,14 @@ namespace WpfToDoList.Views
             vm.AddTask();
         }
 
+        /// <summary>
+        /// Delete 按鈕點擊事件：呼叫 ViewModel 的 DeleteTask()
+        /// </summary>
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             vm.DeleteTask();
         }
+
+        #endregion
     }
 }
