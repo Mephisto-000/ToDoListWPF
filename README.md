@@ -11,6 +11,8 @@ A simple **WPF To-Do List** management system using MVVM pattern, SQL Server dat
 
 💾 使用 SQL Server，連線字串可設定於 `appsettings.json`
 
+![](C:\Github\ToDoListWPF\imgs\screenshot.png)
+
 
 
 ## Project Structure
